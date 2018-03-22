@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: railsuser
+  password: railsuser
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: shoutbox_development
+
+test:
+  <<: *default
+  database: shoutbox_test
+
+production:
+  <<: *default
+  database: shoutbox_production
+  username: shoutbox
+  password: <%= ENV['SHOUTBOX_DATABASE_PASSWORD'] %>

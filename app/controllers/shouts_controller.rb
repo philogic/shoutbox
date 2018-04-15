@@ -14,7 +14,7 @@ class ShoutsController < ApplicationController
     if shout.persisted?
       { notice: "Shout created!" }
     else
-      { alert: "Could not shout" }
+      { alert: "Could not shout. Sorry" }
     end
   end
 end

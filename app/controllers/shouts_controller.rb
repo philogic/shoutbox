@@ -4,6 +4,10 @@ class ShoutsController < ApplicationController
     redirect_to dashboard_show_path, redirect_options_for(shout)
   end
 
+  def show
+    @shout = Shout.find(params[:id])
+  end
+
   private
 
   def shout_params

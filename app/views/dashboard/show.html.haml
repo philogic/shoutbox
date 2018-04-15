@@ -8,8 +8,6 @@
   = f.text_field :body, placeholder: "Shout here!", required: true
   = f.submit "Shout!"
 
-- @shouts.each do |shout|
-  %div
-    = shout.body
+= render @shouts
 
 

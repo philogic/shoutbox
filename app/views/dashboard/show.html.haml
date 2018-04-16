@@ -5,7 +5,8 @@
 %h1 Dashboard
 
 = form_for @shout do |f|
-  = f.text_field :body, placeholder: "Shout here!", required: true
+  = f.fields_for :content do |cform|
+    = cform.text_field :body, placeholder: "Shout here!", required: true
   = f.submit "Shout!"
 
 = render @shouts
